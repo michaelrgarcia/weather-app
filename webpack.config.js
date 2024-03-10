@@ -5,9 +5,9 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "imgs/[name].[ext]",
-    // eslint-disable-next-line no-dupe-keys
     assetModuleFilename: "svgs/[name].[ext]",
+    // eslint-disable-next-line no-dupe-keys
+    assetModuleFilename: "imgs/[name].[ext]",
   },
   module: {
     rules: [
