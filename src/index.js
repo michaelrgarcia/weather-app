@@ -1,5 +1,9 @@
 import logo from "./imgs/logo.png";
 
-const logoImg = document.querySelector("img");
+function loadImgs() {
+    const logoImg = document.querySelector("img");
 
-logoImg.src = logo;
+    logoImg.src = logo;
+}
+
+loadImgs();
