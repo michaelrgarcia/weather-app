@@ -1,5 +1,3 @@
-Vanilla JavaScript webpack template.
+A simple weather app that allows users to get weather data based on a location of their choice. Utilizes WeatherAPI.
 
-After cloning this repo, do the following:
-
-`npm i`
+You can find it here:
