@@ -23,5 +23,3 @@ submitBtn.addEventListener("click", () => {
     console.log("hi");
   }
 });
-
-
