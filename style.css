@@ -14,7 +14,7 @@ html {
 
 body,
 html,
-#content,
+#splash,
 #logo-container {
   display: flex;
   flex-direction: column;
@@ -22,8 +22,9 @@ html,
   align-items: center;
 }
 
-#content {
+#splash {
   position: relative;
+  transition: opacity 0.5s linear;
 }
 
 #logo-container,
