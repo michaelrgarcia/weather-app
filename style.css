@@ -78,7 +78,14 @@ input {
 
   font-size: 0.85em;
   color: #ff0000;
-  opacity: 0;
+
+  height: 13px;
+}
+
+.no-val {
+  background-color: #fde4e4;
+
+  border-color: #ff6767;
 }
 
 #submit {
