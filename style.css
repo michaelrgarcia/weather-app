@@ -107,6 +107,7 @@ input {
 #info {
   width: 100vw;
   gap: 60px;
+  display: none;
 }
 
 #info footer {
