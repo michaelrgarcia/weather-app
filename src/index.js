@@ -2,11 +2,13 @@ import getWeatherInfo from "./apiHitter";
 import logo from "./imgs/logo.png";
 import back from "./imgs/arrow-left-bold-circle-outline.svg";
 import { showSplash } from "./pageTransitions";
+import { changeToImperial, changeToMetric } from "./jsonHandler";
 
 const input = document.querySelector("input");
 const submitBtn = document.getElementById("submit");
 const errorLabel = document.querySelector("span.error");
 const backBtn = document.querySelectorAll(".back");
+const slider = document.querySelector("input[type='checkbox']");
 
 function loadImgs() {
   const logoImg = document.querySelector("#logo-container img");
@@ -51,3 +53,13 @@ backBtn.forEach((btn) => {
     showSplash();
   });
 });
+
+slider.addEventListener("click", (event) => {
+  const degreeNode = event.target.parentNode.parentNode.parentNode.querySelector("#degrees")
+  const windSpeedNode = event.target.parentNode.parentNode.parentNode.querySelector("#wind-speed")
+  if (event.target.checked) {
+    changeToMetric(degreeNode, windSpeedNode);
+  } else {
+    changeToImperial(degreeNode, windSpeedNode);
+  }
+})
