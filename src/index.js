@@ -2,7 +2,6 @@ import getWeatherInfo from "./apiHitter";
 import logo from "./imgs/logo.png";
 import back from "./imgs/arrow-left-bold-circle-outline.svg";
 import { showSplash } from "./pageTransitions";
-import { changeToImperial, changeToMetric } from "./jsonHandler";
 
 const input = document.querySelector("input");
 const submitBtn = document.getElementById("submit");
@@ -32,6 +31,28 @@ function checkErrors() {
   }
 
   return true;
+}
+
+function changeToMetric(degrees, windSpeed) {
+  const degreeNode = degrees;
+  const windSpeedNode = windSpeed;
+
+  const { celsius } = degreeNode.dataset;
+  const { kph } = windSpeedNode.dataset;
+
+  degreeNode.textContent = `${celsius}°C`;
+  windSpeedNode.textContent = `Wind Speed: ${kph}kph`;
+}
+
+function changeToImperial(degrees, windSpeed) {
+  const degreeNode = degrees;
+  const windSpeedNode = windSpeed;
+
+  const { fahrenheit } = degreeNode.dataset;
+  const { mph } = windSpeedNode.dataset;
+
+  degreeNode.textContent = `${fahrenheit}°F`;
+  windSpeedNode.textContent = `Wind Speed: ${mph}mph`;
 }
 
 loadImgs();
