@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>Weather App</title>
   </head>
@@ -13,16 +14,47 @@
         <h1 id="app-name">Weatherbird</h1>
       </div>
       <div id="psuedo-form">
-        <p id="info">Enter a city, town, or zipcode!</p>
+        <p id="instructions">Enter a city, town, or zipcode!</p>
         <div class="form-input">
-          <input type="text" name="submission" id="user-input" required />
+          <input 
+          type="text" 
+          name="submission" 
+          id="user-input" 
+          required />
           <span class="error" aria-live="polite"></span>
         </div>
         <button type="button" id="submit">Submit</button>
       </div>
       <p id="loading">Loading...</p>
     </div>
-
+    <div id="info">
+        <div id="location">
+          <div id="weather-icon">
+            <p id="condition"></p>
+            <img 
+            src="#" 
+            alt="test">
+            <p id="degrees"></p>
+          </div>
+          <div id="location-info">
+            <p id="name"></p>
+            <p id="region"></p>
+            <p id="country"></p>
+          </div>
+        </div>
+        <div id="other">
+          <p id="wind-speed"></p>
+          <p id="humidity"></p>
+          <p id="uv-index"></p>
+        </div>
+        <footer>
+          <img src="#" alt="Go Back" id="back">
+          <label id="units">
+            <input type="checkbox">
+            <span id="slider"></span>
+          </label>
+        </footer>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
