@@ -1,4 +1,5 @@
 import processWeatherInfo from "./jsonHandler";
+import { showLoadingScreen, showInfoScreen, showErrorScreen } from "./pageTransitions";
 
 const apiKey = "e019046cf3bf441f9f8194316240203"
 const url = "https://api.weatherapi.com/v1/current.json";
@@ -14,8 +15,7 @@ export default async function getWeatherInfo(value) {
     const userInput = value;
     const newUrl = `${url}?key=${apiKey}&q=${userInput}`;
 
-    const splash = document.getElementById("splash")
-    splash.style.opacity = "0";
+    showLoadingScreen();
 
     const response = await fetch(newUrl, {mode: "cors"});
     const jsonData = await response.json();
@@ -23,9 +23,10 @@ export default async function getWeatherInfo(value) {
     const errors = weatherError(jsonData);
 
     if (!errors) {
-        console.log(processWeatherInfo(jsonData));
+        processWeatherInfo(jsonData);
+        showInfoScreen();
     } else {
-        console.log("Invalid submission :(");
+        showErrorScreen();
     }
 }
 
