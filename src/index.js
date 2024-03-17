@@ -18,7 +18,7 @@ function loadImgs() {
   backBtn.forEach((btn) => {
     const img = btn;
     img.src = back;
-  })
+  });
 }
 
 function checkErrors() {
@@ -55,11 +55,13 @@ backBtn.forEach((btn) => {
 });
 
 slider.addEventListener("click", (event) => {
-  const degreeNode = event.target.parentNode.parentNode.parentNode.querySelector("#degrees")
-  const windSpeedNode = event.target.parentNode.parentNode.parentNode.querySelector("#wind-speed")
+  const degreeNode =
+    event.target.parentNode.parentNode.parentNode.querySelector("#degrees");
+  const windSpeedNode =
+    event.target.parentNode.parentNode.parentNode.querySelector("#wind-speed");
   if (event.target.checked) {
     changeToMetric(degreeNode, windSpeedNode);
   } else {
     changeToImperial(degreeNode, windSpeedNode);
   }
-})
+});

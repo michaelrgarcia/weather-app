@@ -1,4 +1,4 @@
-const splashScreen = document.querySelector("#splash")
+const splashScreen = document.querySelector("#splash");
 const loadingText = document.getElementById("loading");
 const infoScreen = document.getElementById("info");
 const errorScreen = document.getElementById("error");
@@ -16,7 +16,7 @@ export function showSplash() {
   infoScreen.style.display = "none";
 
   errorScreen.style.opacity = "0";
-  errorScreen.style.display = "none"
+  errorScreen.style.display = "none";
 
   unitSwitch.checked = false;
 }
@@ -24,7 +24,7 @@ export function showSplash() {
 export function showLoadingScreen() {
   hideSplash();
   loadingText.style.opacity = "1";
-  loadingText.style.display = "block";   
+  loadingText.style.display = "block";
 }
 
 export function showInfoScreen() {
