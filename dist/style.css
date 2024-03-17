@@ -15,7 +15,10 @@ html {
 body,
 html,
 #splash,
-#logo-container {
+#logo-container,
+#info,
+#weather-icon,
+#location {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,12 +27,6 @@ html,
 
 #splash {
   position: relative;
-  transition: opacity 0.5s linear;
-}
-
-#logo-container,
-#loading {
-  transition: opacity 0.5s linear;
 }
 
 #logo-container {
@@ -46,6 +43,8 @@ html,
   opacity: 0;
 
   margin-top: 10px;
+
+  transition: opacity 1s linear;
 }
 
 #app-name {
@@ -103,4 +102,111 @@ input {
 
 #submit:active {
   background-color: #e1e1e1;
+}
+
+#info {
+  width: 100vw;
+  gap: 60px;
+}
+
+#info footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+}
+
+#info footer p {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+#info footer img {
+  width: 40px;
+  filter: invert(28%) sepia(0%) saturate(1%) hue-rotate(4deg) brightness(99%) contrast(93%);
+}
+
+#info footer img:hover {
+  background-color: #4b4b4b6c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#location,
+#other {
+  background-color: #a5a5a554;
+  width: 250px;
+  padding: 20px;
+
+  border: 1px solid #000;
+}
+
+#weather-icon img {
+  width: 80px;
+  margin: -25px 0 -25px 0;
+}
+
+#weather-icon p {
+  font-size: 1.4em;
+}
+
+#location-info {
+  margin-top: -15px;
+}
+
+#location-info p,
+#other p {
+  overflow: auto;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+#units {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+#units input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+#slider:before {
+  position: absolute;
+  content: "F°";
+  text-align: center;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: .4s;
+}
+
+input:checked + #slider {
+  background-color: #5fa1d8;
+}
+
+input:focus + #slider {
+  box-shadow: 0 0 1px #5fa1d8;
+}
+
+input:checked + #slider:before {
+  transform: translateX(26px);
+  content: "C°";
 }
