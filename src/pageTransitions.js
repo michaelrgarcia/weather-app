@@ -3,6 +3,8 @@ const loadingText = document.getElementById("loading");
 const infoScreen = document.getElementById("info");
 const errorScreen = document.getElementById("error");
 
+const unitSwitch = document.querySelector("#units input");
+
 function hideSplash() {
   splashScreen.style.transform = "translateY(-1500px)";
 }
@@ -15,6 +17,8 @@ export function showSplash() {
 
   errorScreen.style.opacity = "0";
   errorScreen.style.display = "none"
+
+  unitSwitch.checked = false;
 }
 
 export function showLoadingScreen() {
