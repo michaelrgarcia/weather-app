@@ -105,6 +105,7 @@ input {
 }
 
 #info {
+  margin-top: -30vh;
   width: 100vw;
   gap: 60px;
   display: none;
