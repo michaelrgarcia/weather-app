@@ -1,14 +1,17 @@
 import getWeatherInfo from "./apiHitter";
 import logo from "./imgs/logo.png";
+import back from "./imgs/arrow-left-bold-circle-outline.svg";
 
 const input = document.querySelector("input");
 const submitBtn = document.getElementById("submit");
 const errorLabel = document.querySelector("span.error");
 
 function loadImgs() {
-  const logoImg = document.querySelector("img");
+  const logoImg = document.querySelector("#logo-container img");
+  const backSvg = document.querySelector("footer img");
 
   logoImg.src = logo;
+  backSvg.src = back;
 }
 
 function checkErrors() {
