@@ -46,25 +46,3 @@ export default function processWeatherInfo(json) {
 
   displayWeatherInfo(weatherInfo);
 }
-
-export function changeToMetric(degrees, windSpeed) {
-  const degreeNode = degrees;
-  const windSpeedNode = windSpeed;
-
-  const { celsius } = degreeNode.dataset;
-  const { kph } = windSpeedNode.dataset;
-
-  degreeNode.textContent = `${celsius}°C`;
-  windSpeedNode.textContent = `Wind Speed: ${kph}kph`;
-}
-
-export function changeToImperial(degrees, windSpeed) {
-  const degreeNode = degrees;
-  const windSpeedNode = windSpeed;
-
-  const { fahrenheit } = degreeNode.dataset;
-  const { mph } = windSpeedNode.dataset;
-
-  degreeNode.textContent = `${fahrenheit}°F`;
-  windSpeedNode.textContent = `Wind Speed: ${mph}mph`;
-}
