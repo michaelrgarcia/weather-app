@@ -127,7 +127,8 @@ input {
 
 .back {
   width: 40px;
-  filter: invert(28%) sepia(0%) saturate(1%) hue-rotate(4deg) brightness(99%) contrast(93%);
+  filter: invert(28%) sepia(0%) saturate(1%) hue-rotate(4deg) brightness(99%)
+    contrast(93%);
 }
 
 .back:hover {
@@ -186,7 +187,7 @@ input {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 #slider:before {
@@ -198,7 +199,7 @@ input {
   left: 4px;
   bottom: 4px;
   background-color: #fff;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 input:checked + #slider {
