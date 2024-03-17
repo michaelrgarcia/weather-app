@@ -1,3 +1,34 @@
+function displayWeatherInfo(info) {
+    const condition = document.getElementById("condition");
+    const icon = document.querySelector("#weather-icon img");
+    const degrees = document.getElementById("degrees");
+    degrees.setAttribute("data-fahrenheit", `${info.tempF}`);
+    degrees.setAttribute("data-celsius", `${info.tempC}`);
+
+    const name = document.getElementById("name");
+    const region = document.getElementById("region");
+    const country = document.getElementById("country");
+
+    const windSpeed = document.getElementById("wind-speed");
+    windSpeed.setAttribute("data-mph", `${info.windMph}`);
+    windSpeed.setAttribute("data-kph", `${info.windKm}`);
+
+    const humidity = document.getElementById("humidity");
+    const uvIndex = document.getElementById("uv-index");
+
+    condition.textContent = info.condition;
+    icon.src = info.icon;
+    degrees.textContent = `${info.tempF}°F`;
+
+    name.textContent = info.location;
+    region.textContent = info.region;
+    country.textContent = info.country;
+
+    windSpeed.textContent = `Wind Speed: ${info.windMph}mph`;
+    humidity.textContent = `Humidity: ${info.humidity}%`
+    uvIndex.textContent = `UV Index: ${info.uvIndex}`;
+}
+
 export default function processWeatherInfo(json) {
     const weatherInfo = {
         location: json.location.name,
@@ -13,5 +44,28 @@ export default function processWeatherInfo(json) {
         icon: json.current.condition.icon
     }
 
-    return weatherInfo;
+    displayWeatherInfo(weatherInfo);
 }
+
+export function changeToMetric(degrees, windSpeed) {
+    const degreeNode = degrees;
+    const windSpeedNode = windSpeed;
+
+    const {celsius} = degreeNode.dataset;
+    const {kph} = windSpeedNode.dataset;
+
+    degreeNode.textContent = `${celsius}°C`;
+    windSpeedNode.textContent = `Wind Speed: ${kph}kph`;
+} 
+
+export function changeToImperial(degrees, windSpeed) {
+    const degreeNode = degrees;
+    const windSpeedNode = windSpeed;
+
+    const {fahrenheit} = degreeNode.dataset;
+    const {mph} = windSpeedNode.dataset;
+
+    degreeNode.textContent = `${fahrenheit}°F`;
+    windSpeedNode.textContent = `Wind Speed: ${mph}mph`;
+} 
+
