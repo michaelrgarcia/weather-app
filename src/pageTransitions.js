@@ -1,15 +1,40 @@
-const input = document.querySelector("input");
-const errorLabel = document.querySelector("span.error");
+const splashScreen = document.querySelector("#splash")
+const loadingText = document.getElementById("loading");
+const infoScreen = document.getElementById("info");
+const errorScreen = document.getElementById("error");
 
-export default function checkErrors() {
-  if (input.validity.valueMissing) {
-    input.classList.add("no-val");
-    errorLabel.textContent = "This field cannot be empty.";
-  } else {
-    errorLabel.textContent = "";
-    input.classList.remove("no-val");
-    return false;
-  }
+function hideSplash() {
+  splashScreen.style.transform = "translateY(-1500px)";
+}
 
-  return true;
+export function showSplash() {
+  splashScreen.style.transform = "translateY(0px)";
+
+  infoScreen.style.opacity = "0";
+  infoScreen.style.display = "none";
+
+  errorScreen.style.opacity = "0";
+  errorScreen.style.display = "none"
+}
+
+export function showLoadingScreen() {
+  hideSplash();
+  loadingText.style.opacity = "1";
+  loadingText.style.display = "block";   
+}
+
+export function showInfoScreen() {
+  loadingText.style.opacity = "0";
+  loadingText.style.display = "none";
+
+  infoScreen.style.display = "flex";
+  infoScreen.style.opacity = "1";
+}
+
+export function showErrorScreen() {
+  loadingText.style.opacity = "0";
+  loadingText.style.display = "none";
+
+  errorScreen.style.display = "flex";
+  errorScreen.style.opacity = "1";
 }
